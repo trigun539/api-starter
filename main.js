@@ -1,14 +1,19 @@
-import React, { Component } from 'react';
-import { render } from 'react-dom';
+var express = require('express');
+var bodyParser = require('body-parser');
+var methodOverride = require('method-override');
 
-// TODO: create a container
+var app = express();
 
-// TODO: create a ticker component
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+app.use(methodOverride());
 
-// TODO: create a store
+// Hello world
 
-// TODO: create an action
+app.get('/', function (req, res, next) {
+	res.send('Hello World');
+});
 
-// TODO: create a reducer
-
-render(<h1>Hello world</h1>, document.getElementById('container'));
+app.listen(3000, function() {
+	console.log('App started');
+});

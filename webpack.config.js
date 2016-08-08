@@ -5,7 +5,7 @@ module.exports = {
     main: './main.js',
   },
   output: {
-    filename: './bundle.js'
+    filename: './app.js'
   },
   progress: true,
   colors: true,
